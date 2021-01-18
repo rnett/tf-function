@@ -2,6 +2,7 @@
 /.gradle/
 /build/
 **/build/
+build
 /kotnn-compiler-plugin/build/
 /kotnn-gradle-plugin/build/
 /kotnn-ide-plugin/build/
