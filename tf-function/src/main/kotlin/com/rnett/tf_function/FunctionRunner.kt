@@ -55,7 +55,9 @@ class FunctionRunner<R>(
         val argSignature = ArgsSignature(constantArgs, tensorArgs.mapValues { TensorInfo(it.value.shape(), it.value.dataType()) })
         val function = functionCache.getOrPut(argSignature) { buildFunction(argSignature) }
 
-        val output = function.function.call(tensorArgs).mapValues { tf.constantOf(it.value as TType) }
+        val output = function.function.call(tensorArgs).mapValues { tf.constantOf(it.value as TType).also{ it.value.close() } }
+        tensorArgs.values.forEach{ it.close() }
+
         return function.resultBuilder(output)
     }
 
