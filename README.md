@@ -3,8 +3,7 @@
 This is a proof of concept of a compiler plugin that provides `@tf.function` like behavior for Tensorflow Java
 (wrapping seemingly eager code in a Graph, while being able to seamlessly call the method).
 
-It's trivial to extend this to a lambda like `graphFunction{ ... }`, you just have to add a pre-TF-Function transformer to add the annotation on the
-lambda's local function.
+It's not that hard to extend this to a lambda like `graphFunction{ ... }`, which imo is a better and more Kotliny API.
 
 The semantics are slightly different from Python's, since I wanted to support returning any type.  
 The `result` block is re-ran every time the function is called, with the Graph's results substitured in for any `Operand` variables accessed in
