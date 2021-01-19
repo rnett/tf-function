@@ -8,6 +8,7 @@ import org.jetbrains.kotlin.ir.declarations.IrModuleFragment
 
 class IrGeneration(val messageCollector: MessageCollector) : IrGenerationExtension {
     override fun generate(moduleFragment: IrModuleFragment, pluginContext: IrPluginContext) {
+        initLog()
         TFFunctionTransformer(pluginContext, messageCollector).lower(moduleFragment)
     }
 }

@@ -8,7 +8,7 @@ plugins {
 group = "com.rnett.tf-function"
 
 allprojects {
-    version = "1.0.0-ALPHA"
+    version = "1.0.1-ALPHA"
     group = "com.rnett.tf-function"
 
     repositories {

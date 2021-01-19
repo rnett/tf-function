@@ -34,7 +34,3 @@ gradlePlugin {
         }
     }
 }
-
-tasks.getByName("compileKotlin") {
-    dependsOn(":tf-function-compiler-plugin:publishToMavenLocal")
-}

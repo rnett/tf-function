@@ -10,6 +10,10 @@ private val logFile by lazy {
     File("C:\\Users\\jimne\\Desktop\\My Stuff\\tf-function\\log").also { it.writeText("") }
 }
 
+fun initLog() {
+    logFile.writeText("")
+}
+
 fun log(it: Any?) = logFile.appendText(it.toString() + "\n")
 fun log(key: String, it: Any?) = log("$key: $it")
 

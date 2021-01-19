@@ -1,9 +1,11 @@
 plugins {
     kotlin("jvm") version "1.4.21"
-    id("com.rnett.tf-function") version "1.0.0-ALPHA"
+    id("com.rnett.tf-function") version "1.0.1-ALPHA"
 }
-version = "1.0.0-ALPHA"
+version = "1.0.1-ALPHA"
 group = "com.rnett.tf-function"
+
+val tensorflowVersion = "0.3.0-SNAPSHOT"
 
 repositories {
     maven("https://dl.bintray.com/kotlin/kotlin-eap")
@@ -19,6 +21,7 @@ repositories {
 
 dependencies {
     implementation("com.rnett.tf-function:tf-function:1.0.0-ALPHA")
+    implementation("org.tensorflow:tensorflow-core-platform:${tensorflowVersion}")
 
 
     testImplementation(kotlin("test-junit"))
