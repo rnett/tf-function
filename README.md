@@ -12,6 +12,8 @@ the `result`.
 Most of the interesting stuff happens in `tf-function/src/main/kotlin/com/rnett/tf_function/FunctionRunner.kt` (runtime) and
 `tf-function-compiler-plugin/src/main/kotlin/com/rnett/tf_function/TFFunctionTransformer.kt` (compiler, it's very hacked together).
 
+A more polished version will be made once tensorflow/java's function API exists.
+
 ## Limitations (see Example)
 
 The big issue with this is that the `c` in the result block (coming from the result of the graph execution) must be the same type as the `c` in the
